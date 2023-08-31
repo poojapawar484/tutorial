@@ -1,0 +1,277 @@
+<!-- <div class="section-first-screen">
+    <div class="section-first-screen__shape">
+        <div class="uk-position-relative" tabindex="-1"
+            data-uk-slideshow="min-height: 470; max-height: 580; autoplay: true">
+            <ul class="uk-slideshow-items">
+                <li>
+                    <div class="first-screen__item">
+                        <div
+                            class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                            <img src="../../../assets/img/slider-1.jpg" alt data-uk-cover>
+                        </div>
+                        <div class="uk-position-center uk-position-small uk-text-center">
+                            <div class="first-screen__title" data-uk-slideshow-parallax="x: 100,-100"><span>We’re
+                                    Leaders in Scrap Vehicles And Environmental Sustainability</span>
+                                <div class="uk-h2">Scrap. Earn. Sustain.</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="first-screen__item">
+                        <div
+                            class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                            <img src="../../../assets/img/slider-3.jpg" alt data-uk-cover>
+                        </div>
+                        <div class="uk-position-center uk-position-small uk-text-center">
+                            <div class="first-screen__title" data-uk-slideshow-parallax="x: 100,-100"><span>We’re
+                                    Leaders in Scrap Vehicles And Environmental Sustainability</span>
+                                <div class="uk-h2">Get Multiple Quotes By<br> Our Trusted Vendor</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="first-screen__item">
+                        <div
+                            class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                            <img src="../../../assets/img/slider-2.jpg" alt data-uk-cover>
+                        </div>
+                        <div class="uk-position-center uk-position-small uk-text-center">
+                            <div class="first-screen__title" data-uk-slideshow-parallax="x: 100,-100"><span>We’re
+                                    Leaders in Scrap Vehicles And Environmental Sustainability</span>
+                                <div class="uk-h2">Within 24 Hrs Service</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <div class="uk-visible@s"><a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
+                    data-uk-slidenav-previous data-uk-slideshow-item="previous"></a><a
+                    class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" data-uk-slidenav-next
+                    data-uk-slideshow-item="next"></a></div>
+            <div class="uk-hidden@s">
+                <div class="uk-position-bottom-center uk-position-small uk-light">
+                    <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin-bottom"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- -------------------------------------Enquiry Form-------------------------------------------------- -->
+<div class="page-content">
+
+    <div class="uk-section-large uk-container">
+        <div class="contacts-block">
+
+            <div class="uk-grid uk-grid-collapse" data-uk-grid>
+                <div class="uk-width-2-3@m">
+                    <ngx-spinner bdColor="rgba(51,51,51,0.8)" color="#fff" type="la-ball-scale-multiple"
+                        [fullScreen]="false">
+                        <div class="la-ball-scale-multiple la-dark la-3x">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p style="font-size: 20px; color: white">{{loadermessage}}</p>
+
+                    </ngx-spinner>
+
+                    <div class="block-form">
+                        <div class="section-title">
+                            <div class="uk-h2">Scrap Here</div>
+                        </div>
+                        <div class="section-content">
+                            <p>Required fields are marked with *</p>
+                            <form action="#!" [formGroup]="scrapDetailsseller">
+                                <div class="uk-grid uk-grid-small uk-child-width-1-2@s" data-uk-grid>
+                                    <div class="uk-width-1-1">
+                                        <!-- <input class="" type="text" placeholder="Subject"> -->
+                                        <div class="col-sm-12">
+                                            <input type="TEXT" formControlName="Fullname"
+                                                class="form-control uk-input uk-form-large" value=""
+                                                placeholder="Seller Name *"
+                                                [ngClass]="{ 'is-invalid': submitted && f['Fullname'].errors }">
+                                            <div *ngIf="submitted && f['Fullname'].errors" class="invalid-feedback">
+                                                <div *ngIf="f['Fullname'].errors['required']" class="capitalize">
+                                                    Full Name is required
+                                                </div>
+                                            </div>
+                                            <!-- <input type="text" id="Fullname" formControlName="Fullname" class="form-control"
+                                            [ngClass]="{'is-invalid' : submitted && f['Fullname'].errors }">
+                                          <div *ngIf="submitted && f['Fullname'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['Fullname'].errors?.['required']">Fullname is required</div>
+                          
+                                          </div> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="">
+
+                                        <div class="col-sm-12">
+
+                                            <select class="form-select uk-input uk-form-large" formControlName="Year"
+                                                aria-label="Default select example">
+                                                <option value="" disabled selected>Select Year</option>
+                                                <option *ngFor="let data of year">{{data}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="">
+
+                                        <div class="col-sm-12">
+                                            <input type="TEXT" formControlName="ContactNumber"
+                                                class="form-control uk-input uk-form-large" value=""
+                                                placeholder="Contact Number *"
+                                                [ngClass]="{ 'is-invalid': submitted && f['ContactNumber'].errors }">
+                                            <div *ngIf="submitted && f['ContactNumber'].errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f['ContactNumber'].errors['required']" class="capitalize">
+                                                    Contact Number is
+                                                    required</div>
+                                                <div *ngIf="f['ContactNumber'].errors ['pattern']" class="capitalize">
+                                                    Contact no must be
+                                                    a 10 digit</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <!-- <input class="uk-input uk-form-large" type="text" placeholder="Name *"> -->
+                                        <div class="col-sm-12">
+                                            <select class="form-select uk-input uk-form-large" formControlName="Maker"
+                                                aria-label="Default select example" (ngModelChange)="getData($event)"
+                                                #dataG>
+                                                <option value="" disabled selected>Select Maker</option>
+                                                <option *ngFor="let data of makerdetails" [value]="data.Maker">{{
+                                                    data.Maker }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <!-- <input class="uk-input uk-form-large" type="text" > -->
+                                        <div class="col-sm-12">
+                                            <select class="form-select uk-input uk-form-large" formControlName="Model"
+                                                aria-label="Default select example">
+                                                <option value="" disabled selected>Select Model</option>
+                                                <option *ngFor="let data of modeldetails" [value]="data?.Model">{{
+                                                    data?.Model }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="uk-width-1-2">
+                                        <div class="col-sm-12">
+                                            <select class="form-select uk-input uk-form-large"
+                                            formControlName="PickupLocation" aria-label="Default select example">
+                                            <option value="" disabled selected>Select Pickup Location</option>
+                                            <option *ngFor="let data of details">{{
+                                                data.area_name}}</option>
+                                        </select>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="uk-width-1-1">
+
+                                        <div class="col-sm-12">
+                                            <select class="form-select uk-input uk-form-large"
+                                                formControlName="PickupLocation" aria-label="Default select example">
+                                                <option value="" disabled selected>Select Pickup Location</option>
+                                                <option *ngFor="let data of details">{{
+                                                    data.area_name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-width-1-1">
+
+                                        <div class="col-sm-12">
+                                            <input type="TEXT" formControlName="note"
+                                            class="form-control uk-input uk-form-large" value=""
+                                            placeholder="plase note here *"
+                                            [ngClass]="{ 'is-invalid': submitted && f['note'].errors }">
+                                        <div *ngIf="submitted && f['note'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['note'].errors['required']" class="capitalize">
+                                                Note is required
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-width-1-1">
+                                        <p>Upload vehicle pics</p>
+
+                                        <ngx-dropzone (change)="onFileChange($event)">
+                                            <ngx-dropzone-label>Drop it!</ngx-dropzone-label>
+                                            <ngx-dropzone-preview *ngFor="let f of file" [removable]="true"
+                                                (removed)="onRemove(f)">
+                                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                            </ngx-dropzone-preview>
+                                        </ngx-dropzone>
+                                    </div>
+
+                                    <div class="col-sm-12" align="center">
+                                        <button class="btn-success px-5" type="submit"
+                                            (click)=" openConfirmationDialog()">Get Free Quote</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-3@m">
+                    <div class="sidebar">
+                        <div class="widjet widjet-contacts">
+                            <h4 class="widjet__title">Contact Details</h4>
+                            <ul class="contacts-list">
+                                <li class="contacts-list-item">
+                                    <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-1.svg"
+                                            data-uk-svg alt="HeadOffice Address"></div>
+                                    <div class="contacts-list-item__desc">
+                                        <div class="contacts-list-item__label">HeadOffice Address</div>
+                                        <div class="contacts-list-item__content">SP-TBI, Bhavan's Campus, Andheri
+                                            West, Mumbai, Maharashtra - 400058</div>
+                                    </div>
+                                </li>
+                                <li class="contacts-list-item">
+                                    <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-2.svg"
+                                            data-uk-svg alt="For Rental Support"></div>
+                                    <div class="contacts-list-item__desc">
+                                        <div class="contacts-list-item__label">For Support</div>
+                                        <div class="contacts-list-item__content"><a href="tel:+91
+                                            9145097337">+91 9145097337</a></div>
+                                    </div>
+                                </li>
+                                <!-- <li class="contacts-list-item">
+                                    <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-3.svg"
+                                            data-uk-svg alt="The Office Hours"></div>
+                                    <div class="contacts-list-item__desc">
+                                        <div class="contacts-list-item__label">The Office Hours</div>
+                                        <div class="contacts-list-item__content">Mon - Sat 9am to 7pm</div>
+                                    </div>
+                                </li> -->
+                                <li class="contacts-list-item">
+                                    <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-4.svg"
+                                            data-uk-svg alt="Send Us Email"></div>
+                                    <div class="contacts-list-item__desc">
+                                        <div class="contacts-list-item__label">Send Us Email</div>
+                                        <div class="contacts-list-item__content"> <a href=" info@vehiscrap.com">
+                                                info@vehiscrap.com</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-------------------------------------- Actual Enquiry Form Starts here --------------------------------------->
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<br>
+<div class="row">
+ 
+  <div class="col-md-5">
+    <div>
+      <div>
+        <div class="arrow-right" (click)="selectArrow()"></div>
+        <div class="arrow-left" (click)="selectLeftArrow()"></div>
+        <app-preview srcUrl="{{scrap[currentPicture]}}">
+        </app-preview>
+        <div class="wrapper">
+
+          <app-thumb *ngFor="let picture of scrap; let i = index" (click)="select(i)" srcUrl="{{picture}}"> </app-thumb>
+
+        </div>
+      </div>
+   
+
+    </div>
+  </div>
+
+  <div class=" p-2 col-md-3 offset-md-0">
+    <div class="bg-white shadow mb-5 bg-body rounded-3 border-start border-0 border-3 border-danger card">
+        <div class="card-body  position-relative">
+            <div class="float-start ps-2  position-absolute top-0 start-0">
+                <span class="display-2">{{year}}</span>
+            </div>
+            <div class="float-end text-center lh-1">
+                <span class="text-muted fs-7">{{maker}}</span>
+            </div>
+            <div class="float-end text-center lh-1">
+              <span class="text-muted fs-7">{{model}}</span>
+          </div>
+        </div>
+        <div class="card-footer text-muted bg-transparent border-0 text-end">
+            <span class="btn btn-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="View"><i class="fa-solid fa-eye"></i></span>
+            <span class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Add"><i class="fa-solid fa-plus"></i></span>
+        </div>
+    </div>
+</div>
+ <div class=" p-2 col-md-3 offset-md-0">
+    <div class="bg-white shadow mb-5 bg-body rounded-3 border-start border-0 border-3 border-danger card">
+        <div class="card-body  position-relative">
+          <div class="float-start ps-2  position-absolute top-0 start-0">
+            <span class="display-2">Note</span>
+        </div>
+            <div class="float-end text-center lh-1">
+                <span>{{note}}</span>
+            </div>
+           
+        </div>
+        <div class="card-footer text-muted bg-transparent border-0 text-end">
+            <span class="btn btn-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="View"><i class="fa-solid fa-eye"></i></span>
+            <span class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Add"><i class="fa-solid fa-plus"></i></span>
+        </div>
+    </div>
+</div>
+
+</div>
+<br>
+<br>
+<br>

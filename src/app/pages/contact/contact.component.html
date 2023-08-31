@@ -1,0 +1,138 @@
+<main class="page-main">
+  <div class="section-first-screen">
+    <div class="section-first-screen__shape">
+      <div class="section-first-screen__content" style="background-image: url(assets/img/bg-page-contacts.jpg)">
+        <div class="uk-container">
+          <h1 class="section-first-screen__title">Contact Us</h1>
+          <div class="section-first-screen__breadcrumb">
+            <ul class="uk-breadcrumb">
+              <li><a routerLink="/pages/home">Home</a></li>
+              <li><span>Contact Us</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="uk-section-large uk-container">
+      <div class="contacts-block">
+        <div class="uk-grid uk-grid-collapse" data-uk-grid>
+          <div class="uk-width-1-3@m">
+            <div class="sidebar">
+              <div class="widjet widjet-contacts">
+                <h4 class="widjet__title">Contact Details</h4>
+                <ul class="contacts-list">
+                    <li class="contacts-list-item">
+                        <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-1.svg"
+                                data-uk-svg alt="HeadOffice Address"></div>
+                        <div class="contacts-list-item__desc">
+                            <div class="contacts-list-item__label">HeadOffice Address</div>
+                            <div class="contacts-list-item__content">SP-TBI, Bhavan's Campus, Andheri
+                                West, Mumbai, Maharashtra - 400058</div>
+                        </div>
+                    </li>
+                    <li class="contacts-list-item">
+                        <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-2.svg"
+                                data-uk-svg alt="For Rental Support"></div>
+                        <div class="contacts-list-item__desc">
+                            <div class="contacts-list-item__label">For Support</div>
+                            <div class="contacts-list-item__content"><a href="tel:+91
+                                9145097337">+91 9145097337</a></div>
+                        </div>
+                    </li>
+                    <!-- <li class="contacts-list-item">
+                        <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-3.svg"
+                                data-uk-svg alt="The Office Hours"></div>
+                        <div class="contacts-list-item__desc">
+                            <div class="contacts-list-item__label">The Office Hours</div>
+                            <div class="contacts-list-item__content">Mon - Sat 9am to 7pm</div>
+                        </div>
+                    </li> -->
+                    <li class="contacts-list-item">
+                        <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-4.svg"
+                                data-uk-svg alt="Send Us Email"></div>
+                        <div class="contacts-list-item__desc">
+                            <div class="contacts-list-item__label">Send Us Email</div>
+                            <div class="contacts-list-item__content"> <a href=" info@vehiscrap.com">
+                                    info@vehiscrap.com</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </div>
+          </div>
+          <!-------------------------------------- Contact Form Starts here --------------------------------------->
+          <div class="uk-width-2-3@m">
+            <div class="block-form">
+              <div class="section-title">
+                <div class="uk-h2">Send a Message</div>
+              </div>
+              <div class="section-content">
+                <p>Your email address will not be published. Required fields are marked with *</p>
+                <form action="#!" [formGroup]="contactSeller">
+                  <div class="uk-grid uk-grid-small uk-child-width-1-2@s" data-uk-grid>
+                    <div>
+                      <!-- <input class="uk-input uk-form-large" type="text" placeholder="Name *"> -->
+                      <div class="col-sm-12">
+                        <input type="text" formControlName="contact_name" class="form-control uk-input uk-form-large" placeholder="Name *"
+                            [ngClass]="{ 'is-invalid': submitted && f['contact_name'].errors }">
+                        <div *ngIf="submitted && f['contact_name'].errors" class="invalid-feedback">
+                            <div *ngIf="f['contact_name'].errors['required']" class="capitalize">Name is
+                                Required</div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div>
+                      <!-- <input class="uk-input uk-form-large" type="text" > -->
+                      <div class="col-sm-12">
+                        <input type="email" formControlName="contact_email" class="form-control uk-input uk-form-large" value=""  placeholder="Email *"
+                            [ngClass]="{ 'is-invalid': submitted && f['contact_email'].errors }">
+                        <div *ngIf="submitted && f['contact_email'].errors" class="invalid-feedback">
+                            <div *ngIf="f['contact_email'].errors['required']" class="capitalize">Email is required
+                            </div>
+                            <div *ngIf="f['email_id'].errors['pattern']" class="capitalize">Email must be a valid
+                                email address</div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="uk-width-1-1">
+                      <!-- <input class="" type="text" placeholder="Subject"> -->
+                      <div class="col-sm-12">
+                        <input type="TEXT" formControlName="contact_subject" class="form-control uk-input uk-form-large" value="" placeholder="Subject"
+                            [ngClass]="{ 'is-invalid': submitted && f['contact_subject'].errors }">
+                        <div *ngIf="submitted && f['contact_subject'].errors" class="invalid-feedback">
+                            <div *ngIf="f['contact_subject'].errors['required']" class="capitalize">Address is required
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="uk-width-1-1">
+                      <!-- <textarea class=""
+                        placeholder="Your Message"></textarea> -->
+                        <div class="col-sm-12">
+                          <textarea type="TEXT" formControlName="contact_message" class="form-control uk-textarea uk-form-large" value="" placeholder="Your Message"
+                              [ngClass]="{ 'is-invalid': submitted && f['contact_message'].errors }"></textarea>
+                          <div *ngIf="submitted && f['contact_message'].errors" class="invalid-feedback">
+                              <div *ngIf="f['contact_message'].errors['required']" class="capitalize">Address is required
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div><button class="uk-button uk-button-danger uk-button-large" type="submit" (click)="openConfirmationDialog()">Send message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

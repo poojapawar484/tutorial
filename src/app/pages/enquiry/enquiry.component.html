@@ -1,0 +1,202 @@
+<main class="page-main">
+    <div class="section-first-screen">
+      <div class="section-first-screen__shape">
+        <div class="section-first-screen__content" style="background-image: url(assets/img/bg-page-contacts.jpg)">
+          <div class="uk-container">
+            <h1 class="section-first-screen__title">Enquiry</h1>
+            <div class="section-first-screen__breadcrumb">
+              <ul class="uk-breadcrumb">
+                <li><a routerLink="/pages/home">Home</a></li>
+                <li><span>Enquiry</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="page-content">
+      <div class="uk-section-large uk-container">
+        <div class="contacts-block">
+          <div class="uk-grid uk-grid-collapse" data-uk-grid>
+            <div class="uk-width-1-3@m">
+              <div class="sidebar">
+                <div class="widjet widjet-contacts">
+                  <h4 class="widjet__title">Contact Details</h4>
+                  <ul class="contacts-list">
+                    <li class="contacts-list-item">
+                      <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-1.svg" data-uk-svg
+                          alt="HeadOffice Address"></div>
+                      <div class="contacts-list-item__desc">
+                        <div class="contacts-list-item__label">HeadOffice Address</div>
+                        <div class="contacts-list-item__content">354 Oakridge Lane, Camden NJ 08102 - USA</div>
+                      </div>
+                    </li>
+                    <li class="contacts-list-item">
+                      <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-2.svg" data-uk-svg
+                          alt="For Rental Support"></div>
+                      <div class="contacts-list-item__desc">
+                        <div class="contacts-list-item__label">For Rental Support</div>
+                        <div class="contacts-list-item__content"><a href="tel:18107994660/5660">+1 (810) 799 4660 /
+                            5660</a></div>
+                      </div>
+                    </li>
+                    <li class="contacts-list-item">
+                      <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-3.svg" data-uk-svg
+                          alt="The Office Hours"></div>
+                      <div class="contacts-list-item__desc">
+                        <div class="contacts-list-item__label">The Office Hours</div>
+                        <div class="contacts-list-item__content">Mon - Sat 9am to 7pm</div>
+                      </div>
+                    </li>
+                    <li class="contacts-list-item">
+                      <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-4.svg" data-uk-svg
+                          alt="Send Us Email"></div>
+                      <div class="contacts-list-item__desc">
+                        <div class="contacts-list-item__label">Send Us Email</div>
+                        <div class="contacts-list-item__content"> <a
+                            href="mailto:repair@my-domain.net">repair@my-domain.net</a></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-------------------------------------- Enquiry Form Starts here --------------------------------------->
+            <div class="uk-width-2-3@m">
+              <div class="block-form">
+                <div class="section-title">
+                  <div class="uk-h2">Scrap Here</div>
+                </div>
+                <div class="section-content">
+                  <p>Required fields are marked with *</p>
+                  <form action="#!" [formGroup]="scrapDetails">
+                    <div class="uk-grid uk-grid-small uk-child-width-1-2@s" data-uk-grid>
+                      <div>
+                        <!-- <input class="uk-input uk-form-large" type="text" placeholder="Name *"> -->
+                        <div class="col-sm-12">
+                          <select class="form-select uk-input uk-form-large" formControlName="Maker" aria-label="Default select example" placeholder="Maker *" (ngModelChange)="getData($event)"
+                          #dataG>
+                            <option value="" disabled selected>Select Maker</option>
+                            <option  *ngFor="let data of makerdetails" [value]="data.Maker">{{ data.Maker }}</option>
+
+                          </select>
+                          <!-- <input type="text" formControlName="Maker" class="form-control uk-input uk-form-large" placeholder="Maker *"
+                              [ngClass]="{ 'is-invalid': submitted && f['Maker'].errors }">
+                          <div *ngIf="submitted && f['Maker'].errors" class="invalid-feedback">
+                              <div *ngIf="f['Maker'].errors['required']" class="capitalize">Maker is
+                                  Required</div>
+                          </div> -->
+                      </div>
+                      </div>
+  
+                      <div>
+                        <!-- <input class="uk-input uk-form-large" type="text" > -->
+                        <div class="col-sm-12">
+                          <select class="form-select uk-input uk-form-large" formControlName="Model" aria-label="Default select example" placeholder="Maker *">
+                            <option value="" disabled selected>Select Model</option>
+                            <option *ngFor="let data of modeldetails" [value]="data?.id">{{ data?.Model }}</option>
+                          </select>
+                          <!-- <input type="email" formControlName="Model" class="form-control uk-input uk-form-large" value=""  placeholder="Model *"
+                              [ngClass]="{ 'is-invalid': submitted && f['Model'].errors }">
+                          <div *ngIf="submitted && f['Model'].errors" class="invalid-feedback">
+                              <div *ngIf="f['Model'].errors['required']" class="capitalize">Model is required
+                              </div>
+                          </div> -->
+                      </div>
+                      </div>
+                      <div class="uk-width-1-1">
+                        <!-- <input class="uk-input uk-form-large" type="text" > -->
+                        <div class="col-sm-12">
+                          <input type="email" formControlName="Year" class="form-control uk-input uk-form-large" value=""  placeholder="Year *"
+                              [ngClass]="{ 'is-invalid': submitted && f['Year'].errors }">
+                          <div *ngIf="submitted && f['Year'].errors" class="invalid-feedback">
+                              <div *ngIf="f['Year'].errors['required']" class="capitalize">Year is required
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+
+                      <div class="uk-width-1-1">
+                        <!-- <input class="" type="text" placeholder="Subject"> -->
+                        <div class="col-sm-12">
+                          <input type="TEXT" formControlName="Fullname" class="form-control uk-input uk-form-large" value="" placeholder="Full Name *"
+                              [ngClass]="{ 'is-invalid': submitted && f['Fullname'].errors }">
+                          <div *ngIf="submitted && f['Fullname'].errors" class="invalid-feedback">
+                              <div *ngIf="f['Fullname'].errors['required']" class="capitalize">Full Name is required
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+
+                      <div class="uk-width-1-1">
+                        <!-- <input class="" type="text" placeholder="Subject"> -->
+                        <div class="col-sm-12">
+                          <input type="TEXT" formControlName="ContactNumber" class="form-control uk-input uk-form-large" value="" placeholder="Contact Number *"
+                              [ngClass]="{ 'is-invalid': submitted && f['ContactNumber'].errors }">
+                              <div *ngIf="submitted && f['contact_number'].errors" class="invalid-feedback">
+                                <div *ngIf="f['contact_number'].errors['required']" class="capitalize">Contact Number is
+                                    required</div>
+                                <div *ngIf="f['contact_number'].errors ['pattern']" class="capitalize">Contact no must be
+                                    a 10 digit</div>
+                              </div>
+                      </div>
+                      </div>
+  
+                      <div class="uk-width-1-1">
+                        <!-- <textarea class=""
+                          placeholder="Your Message"></textarea> -->
+                          <div class="col-sm-12">
+                            <textarea type="TEXT" formControlName="PickupLocation" class="form-control uk-textarea uk-form-large" value="" placeholder="    Location of Pick-up *"
+                                [ngClass]="{ 'is-invalid': submitted && f['PickupLocation'].errors }"></textarea>
+                            <div *ngIf="submitted && f['PickupLocation'].errors" class="invalid-feedback">
+                                <div *ngIf="f['PickupLocation'].errors['required']" class="capitalize">PickupLocation is required
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div><button class="uk-button uk-button-danger uk-button-large" type="submit" (click)="openConfirmationDialog()">Send message</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <!-- <div class="contacts-map uk-container pb-5"><iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12233.178242503007!2d-75.12062315790071!3d39.9571665186268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c8f752067afb%3A0x31a9a3edb6f9b368!2z0JrQsNC80LTQtdC9LCDQndGM0Y4t0JTQttC10YDRgdC4IDA4MTAyLCDQodCo0JA!5e0!3m2!1sru!2sua!4v1608217970812!5m2!1sru!2sua"></iframe>
+    </div> -->
+
+    <div class="section-subscribe">
+      <div class="section-subscribe__content">
+        <div class="uk-container">
+          <div class="subscribe-box">
+            <div class="uk-grid uk-flex-middle uk-child-width-1-2@m" data-uk-grid>
+              <div>
+                <div class="section-title">
+                  <div class="uk-h2">Newsletter Subscription</div><span>Get Latest Auto News & Updates Directly To
+                    Inbox</span>
+                </div>
+              </div>
+              <div>
+                <div class="subscribe-box__form">
+                  <form action="#!">
+                    <div class="uk-flex uk-flex-middle"><input class="uk-input uk-form-large" type="email" name="email"
+                        placeholder="Write your email ..."><button class="uk-button uk-button-danger uk-button-large"
+                        type="submit" data-uk-icon="triangle-right">Subscribe</button></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>

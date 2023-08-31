@@ -1,0 +1,56 @@
+.table>:not(caption)>*>* {
+    padding: 0.5rem 0.5rem;
+    background-color:transparent;
+    border-bottom-width: 1px;
+    box-shadow: none;
+}
+
+/* Nav Bar CSS Starts Here */
+.bg{
+    background-color: rgb(221, 216, 216);
+}
+.fw{
+    font-weight: bold;
+    color: black;
+}
+.inp{
+    margin-right: 10px;
+    padding: 8px;
+    width: 60%;
+    border: 2px solid rgb(221, 216, 216);
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .res {
+      display: none;
+    }
+  }
+/* Nav Bar CSS Ends Here */
+
+
+/* Products Card CSS Starts Here */
+.customBorder{
+    border-left: 10px gold solid;
+}
+.customButton{
+    /* padding: 10px; */
+    width: 110px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+.customButton:hover{
+    border: 3px solid black;
+}
+/* Products Card CSS Ends Here */
+/* Go to top button CSS Starts */
+.but{
+    position: fixed;
+    top: 100px;
+    
+    background-color: white;
+    border: none;
+    font-size: 10px;
+
+}
+/* Go to top button CSS Ends */

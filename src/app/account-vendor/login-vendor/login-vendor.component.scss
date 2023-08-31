@@ -1,0 +1,28 @@
+* {
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+}
+
+.section-why-choose__shape {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.uk-container {
+    width:56%;
+
+}
+
+.why-choose__content {
+    padding: 5% 10%;
+}
+@media(min-width:320px) and (max-width:900px){
+    .section-first-block{
+
+display: none;
+    
+    
+    }
+    .uk-container {
+        width: 90%;
+    }
+  }

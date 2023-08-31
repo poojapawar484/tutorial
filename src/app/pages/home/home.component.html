@@ -1,0 +1,545 @@
+<main class="page-main">
+    <div class="section-first-screen">
+        <div class="section-first-screen__shape">
+            <div class="uk-position-relative" tabindex="-1"
+                data-uk-slideshow="min-height: 470; max-height: 580; autoplay: true">
+                <ul class="uk-slideshow-items">
+                    <li>
+                        <div class="first-screen__item">
+                            <div
+                                class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                                <img src="../../../assets/img/slider-1.jpg" alt data-uk-cover>
+                            </div>
+                            <div class="uk-position-center uk-position-small uk-text-center">
+                                <div class="first-screen__title" data-uk-slideshow-parallax="x: 100,-100"><span>We’re
+                                        Leaders in Scrap Vehicles And Environmental Sustainability</span>
+                                    <div class="uk-h2">Scrap. Earn. Sustain.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="first-screen__item">
+                            <div
+                                class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                                <img src="../../../assets/img/slider-3.jpg" alt data-uk-cover>
+                            </div>
+                            <div class="uk-position-center uk-position-small uk-text-center">
+                                <div class="first-screen__title" data-uk-slideshow-parallax="x: 100,-100"><span>We’re
+                                        Leaders in Scrap Vehicles And Environmental Sustainability</span>
+                                    <div class="uk-h2">Get Multiple Quotes By<br> Our Trusted Vendor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="first-screen__item">
+                            <div
+                                class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                                <img src="../../../assets/img/slider-2.jpg" alt data-uk-cover>
+                            </div>
+                            <div class="uk-position-center uk-position-small uk-text-center">
+                                <div class="first-screen__title" data-uk-slideshow-parallax="x: 100,-100"><span>We’re
+                                        Leaders in Scrap Vehicles And Environmental Sustainability</span>
+                                    <div class="uk-h2">Within 24 Hrs Service</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="uk-visible@s"><a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
+                        data-uk-slidenav-previous data-uk-slideshow-item="previous"></a><a
+                        class="uk-position-center-right uk-position-small uk-hidden-hover" href="#"
+                        data-uk-slidenav-next data-uk-slideshow-item="next"></a></div>
+                <div class="uk-hidden@s">
+                    <div class="uk-position-bottom-center uk-position-small uk-light">
+                        <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin-bottom"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------------------Enquiry Form-------------------------------------------------- -->
+    <div class="page-content">
+        
+        <div class="uk-section-large uk-container">
+            <div class="contacts-block">
+        
+                <div class="uk-grid uk-grid-collapse" data-uk-grid>
+                    <div class="uk-width-2-3@m">
+                        <ngx-spinner bdColor="rgba(51,51,51,0.8)" color="#fff" type="la-ball-scale-multiple" [fullScreen]="false">
+                            <div class="la-ball-scale-multiple la-dark la-3x">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <p style="font-size: 20px; color: white">{{loadermessage}}</p>
+
+                          </ngx-spinner>
+
+                        <div class="block-form">
+                            <div class="section-title">
+                                <div class="uk-h2">Scrap Here</div>
+                            </div>
+                            <div class="section-content">
+                                <p>Required fields are marked with *</p>
+                                <form action="#!" [formGroup]="scrapDetails">
+                                    <div class="uk-grid uk-grid-small uk-child-width-1-2@s" data-uk-grid>
+                                        <div class="uk-width-1-1">
+                                            <!-- <input class="" type="text" placeholder="Subject"> -->
+                                            <div class="col-sm-12">
+                                                <input type="TEXT" formControlName="Fullname"
+                                                    class="form-control uk-input uk-form-large" value=""
+                                                    placeholder="Full Name *"
+                                                    [ngClass]="{ 'is-invalid': submitted && f['Fullname'].errors }">
+                                                <div *ngIf="submitted && f['Fullname'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['Fullname'].errors['required']" class="capitalize">
+                                                        Full Name is required
+                                                    </div>
+                                                </div>
+                                                <!-- <input type="text" id="Fullname" formControlName="Fullname" class="form-control"
+                                                [ngClass]="{'is-invalid' : submitted && f['Fullname'].errors }">
+                                              <div *ngIf="submitted && f['Fullname'].errors" class="invalid-feedback">
+                                                <div *ngIf="f['Fullname'].errors?.['required']">Fullname is required</div>
+                              
+                                              </div> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="">
+
+                                            <div class="col-sm-12">
+
+                                                <select class="form-select uk-input uk-form-large"
+                                              formControlName="Year" aria-label="Default select example"
+                                             >
+                                              <option value="" disabled selected>Select Year</option>
+                                              <option  *ngFor="let data of year">{{data}}</option>
+                                          </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="">
+                                         
+                                            <div class="col-sm-12">
+                                                <input type="TEXT" formControlName="ContactNumber"
+                                                    class="form-control uk-input uk-form-large" value=""
+                                                    placeholder="Contact Number *"
+                                                    [ngClass]="{ 'is-invalid': submitted && f['ContactNumber'].errors }">
+                                                <div *ngIf="submitted && f['ContactNumber'].errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f['ContactNumber'].errors['required']"
+                                                        class="capitalize">Contact Number is
+                                                        required</div>
+                                                    <div *ngIf="f['ContactNumber'].errors ['pattern']"
+                                                        class="capitalize">Contact no must be
+                                                        a 10 digit</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div>
+                                            <!-- <input class="uk-input uk-form-large" type="text" placeholder="Name *"> -->
+                                            <div class="col-sm-12">
+                                                <select class="form-select uk-input uk-form-large"
+                                                    formControlName="Maker" aria-label="Default select example"
+                                                    (ngModelChange)="getData($event)" #dataG>
+                                                    <option value="" disabled selected>Select Maker</option>
+                                                    <option *ngFor="let data of makerdetails" [value]="data.Maker">{{
+                                                        data.Maker }}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <!-- <input class="uk-input uk-form-large" type="text" > -->
+                                            <div class="col-sm-12">
+                                                <select class="form-select uk-input uk-form-large"
+                                                    formControlName="Model" aria-label="Default select example">
+                                                    <option value="" disabled selected>Select Model</option>
+                                                    <option *ngFor="let data of modeldetails" [value]="data?.Model">{{
+                                                        data?.Model }}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="uk-width-1-2">
+                                            <div class="col-sm-12">
+                                                <select class="form-select uk-input uk-form-large"
+                                                formControlName="PickupLocation" aria-label="Default select example">
+                                                <option value="" disabled selected>Select Pickup Location</option>
+                                                <option *ngFor="let data of details">{{
+                                                    data.area_name}}</option>
+                                            </select>
+                                            </div>
+                                        </div> -->
+                             
+                              <div class="uk-width-1-1">
+                              
+                                <div class="col-sm-12">
+                                    <select class="form-select uk-input uk-form-large"
+                                    formControlName="PickupLocation" aria-label="Default select example">
+                                    <option value="" disabled selected>Select Pickup Location</option>
+                                    <option *ngFor="let data of details">{{
+                                        data.area_name}}</option>
+                                </select>
+                                </div>
+                            </div>
+                                        
+                                        <div class="uk-width-1-1">
+                                            <p>Upload vehicle pics</p>
+
+                                            <ngx-dropzone (change)="onFileChange($event)">
+                                                <ngx-dropzone-label>Drop it!</ngx-dropzone-label>
+                                                <ngx-dropzone-preview *ngFor="let f of file" [removable]="true"
+                                                    (removed)="onRemove(f)">
+                                                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                                </ngx-dropzone-preview>
+                                            </ngx-dropzone>
+                                        </div>
+
+                                        <div class="col-sm-12" align="center">
+                                            <button  class="btn-success px-5" type="submit"
+                                                (click)=" openConfirmationDialog()">Get Free Quote</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="uk-width-1-3@m">
+                        <div class="sidebar">
+                            <div class="widjet widjet-contacts">
+                                <h4 class="widjet__title">Contact Details</h4>
+                                <ul class="contacts-list">
+                                    <li class="contacts-list-item">
+                                        <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-1.svg"
+                                                data-uk-svg alt="HeadOffice Address"></div>
+                                        <div class="contacts-list-item__desc">
+                                            <div class="contacts-list-item__label">HeadOffice Address</div>
+                                            <div class="contacts-list-item__content">SP-TBI, Bhavan's Campus, Andheri
+                                                West, Mumbai, Maharashtra - 400058</div>
+                                        </div>
+                                    </li>
+                                    <li class="contacts-list-item">
+                                        <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-2.svg"
+                                                data-uk-svg alt="For Rental Support"></div>
+                                        <div class="contacts-list-item__desc">
+                                            <div class="contacts-list-item__label">For Support</div>
+                                            <div class="contacts-list-item__content"><a href="tel:+91
+                                                9145097337">+91 9145097337</a></div>
+                                        </div>
+                                    </li>
+                                    <!-- <li class="contacts-list-item">
+                                        <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-3.svg"
+                                                data-uk-svg alt="The Office Hours"></div>
+                                        <div class="contacts-list-item__desc">
+                                            <div class="contacts-list-item__label">The Office Hours</div>
+                                            <div class="contacts-list-item__content">Mon - Sat 9am to 7pm</div>
+                                        </div>
+                                    </li> -->
+                                    <li class="contacts-list-item">
+                                        <div class="contacts-list-item__icon"><img src="assets/img/ico-contact-4.svg"
+                                                data-uk-svg alt="Send Us Email"></div>
+                                        <div class="contacts-list-item__desc">
+                                            <div class="contacts-list-item__label">Send Us Email</div>
+                                            <div class="contacts-list-item__content"> <a href=" info@vehiscrap.com">
+                                                    info@vehiscrap.com</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------------------------------- Actual Enquiry Form Starts here --------------------------------------->
+           
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------Main Features----------------------------------------------- -->
+    <div class="section-partners ">
+        <div class="uk-container">
+            <div class="partners-title">
+                <h3 class="uk-h2">VEHISCRAP</h3><span>Trusted by our millions of satisfied partners</span>
+            </div>
+            <div data-uk-slider>
+                <div class="uk-position-relative" tabindex="-1">
+                    <ul
+                        class="uk-slider-items uk-grid uk-child-width-1-1 uk-child-width-1-3@s uk-child-width-1-4@m uk-flex-middle uk-text-center">
+                        <li>
+                            <div class="team-item">
+                                <div class="team-item__box">
+                                    <div class="uk-transition-toggle" tabindex="0">
+                                        <div class="team-item__media uk-light uk-inline-clip"><img
+                                                src="../../../assets/img/feature-4.jpeg" alt="Mark Dennis">
+                                            <div
+                                                class=" uk-position-cover uk-overlay uk-overlay-primary uk-flex uk-flex-center uk-flex-middle">
+                                                <a class="uk-button uk-button-default uk-button-large" href="#!">Best
+                                                    Prices</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="team-item">
+                                <div class="team-item__box">
+                                    <div class="uk-transition-toggle" tabindex="0">
+                                        <div class="team-item__media uk-light uk-inline-clip"><img
+                                                src="../../../assets/img/feature-3.jpg" alt="William Benson">
+                                            <div
+                                                class=" uk-position-cover uk-overlay uk-overlay-primary uk-flex uk-flex-center uk-flex-middle">
+                                                <a class="uk-button uk-button-default uk-button-large"
+                                                    href="#!">Verified Buyers</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="team-item">
+                                <div class="team-item__box">
+                                    <div class="uk-transition-toggle" tabindex="0">
+                                        <div class="team-item__media uk-light uk-inline-clip"><img
+                                                src="../../../assets/img/feature-2.jpg" alt="James Anderson">
+                                            <div
+                                                class=" uk-position-cover uk-overlay uk-overlay-primary uk-flex uk-flex-center uk-flex-middle">
+                                                <a class="uk-button uk-button-default uk-button-large"
+                                                    href="#!">Transparent Process</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="team-item">
+                                <div class="team-item__box">
+                                    <div class="uk-transition-toggle" tabindex="0">
+                                        <div class="team-item__media uk-light uk-inline-clip"><img
+                                                src="../../../assets/img/feature-1.jpg" alt="Amelia Grace">
+                                            <div
+                                                class=" uk-position-cover uk-overlay uk-overlay-primary uk-flex uk-flex-center uk-flex-middle">
+                                                <a class="uk-button uk-button-default uk-button-large" href="#!">Hassle
+                                                    Free</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-medium-top"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------------------About Us-------------------------------------------------------->
+    <div class="section-about uk-margin-bottom pb-5" id="#aboutus">
+        <div class="uk-container">
+            <div class="section-title uk-text-center">
+                <span></span>
+                <h3 class="uk-h2">About Us</h3>
+            </div>
+            <div class="uk-grid uk-grid-small uk-child-width-1-3@l uk-child-width-1-2@s uk-flex-middle uk-flex-center"
+                data-uk-grid>
+                <div class="uk-width-1-2@m">
+
+                    <div class="">
+                        <div data-uk-lightbox><a href=""><img src="../../../assets/img/aboutus.jpg"
+                                    alt="img-about-1"></a></div>
+                    </div>
+                </div>
+                <div class="uk-width-1-2@m">
+                    <div class="">
+                        <span></span>
+                        <h3 class="uk-h2">We're Committed To Meet<br>The Quality Standards</h3>
+                    </div>
+                    <div class="section-content">
+                        <h5>Vehiscrap is an initiative that provides people an organised platform to scrap their old
+                            vehicles. We aim to minimise the risk of road safety that old vehicles pose. It is our
+                            effort toward road safety and environment..</h5>
+                        <h5>Say Goodbye to Your Scrap Car with Us! We'll help you get the most of your vehicle's remains
+                            with our top-notch car dismantling services. From convenient pick-ups to responsible
+                            disposal of parts and junk, we make scrap car disposal easy and hassle-free. Get in touch
+                            now to find out more!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------------------Why Should You Scrap Your Vehicle---------------------------------- -->
+    <div class="section-features pb-5">
+        <div class="uk-container">
+            <div class="section-title uk-text-center"><span>We Promise You To Give Best Services</span>
+                <h3 class="uk-h2">Why Should You Scrap Your Vehicle</h3>
+            </div>
+            <br>
+            <div data-uk-slider>
+                <div class="uk-position-relative" tabindex="-1">
+                    <ul class="uk-slider-items uk-grid uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m">
+                        <li>
+                            <div class="feature-item">
+                                <!-- <div class="feature-item__icon"><img src="assets/img/ico-feature-2.svg" alt="ico-feature" data-uk-svg></div> -->
+                                <div class="feature-item__desc">
+                                    <div class="feature-item__title">High Fees for the Fitness test</div>
+                                    <div class="feature-item__text"> If a commercial vehicle is older than 15 years,
+                                        then the fees for the fitness test and the issuance of a Fitness Certificate
+                                        will attract higher charges.</div>
+                                    <!-- <div class="feature-item__more"> <a class="uk-button-link" href="#!" data-uk-icon="triangle-right">Read More </a></div>  -->
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-item">
+                                <!-- <div class="feature-item__icon"><img src="assets/img/ico-feature-2.svg" alt="ico-feature" data-uk-svg></div> -->
+                                <div class="feature-item__desc">
+                                    <div class="feature-item__title">High Registration Renewal Fees</div>
+                                    <div class="feature-item__text">If a private vehicle is older than 15 years, then
+                                        the registration renewal charges will be higher. </div>
+                                    <!-- <div class="feature-item__more"> <a class="uk-button-link" href="#!" data-uk-icon="triangle-right">Read More </a></div> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-item">
+                                <!-- <div class="feature-item__icon"><img src="assets/img/ico-feature-3.svg" alt="ico-feature" data-uk-svg></div> -->
+                                <div class="feature-item__desc">
+                                    <div class="feature-item__title">Green Cess</div>
+                                    <div class="feature-item__text">In addition to the road tax, following the policy
+                                        outlines of the vehicle scrap policy 2021, a green cess of 10-15% will be levied
+                                        on old vehicles.</div>
+                                    <!-- <div class="feature-item__more"> <a class="uk-button-link" href="#!" data-uk-icon="triangle-right">Read More </a></div> -->
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------Benefits of Recyling---------------------------------- -->
+    <div class="section-services">
+        <div class="">
+            <div class="uk-container">
+                <div class="section-title uk-text-center"><span>We Promise To Give Best Services</span>
+                    <h3 class="uk-h2">Benefits of Recycling</h3>
+                </div>
+                <div class="section-container">
+                    <ul class="service-nav uk-grid uk-grid-collapse uk-child-width-1-2@m uk-child-width-1-2@s"
+                        data-uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium; swiping: false">
+                        <li><a href="">
+                                <div class="uk-h6">Road Tax Concession</div><span>Scrapping old vehicles can earn you a
+                                    road tax concession as high as 25% for non-commercial vehicles and 15% for
+                                    commercial vehicles.</span>
+                            </a></li>
+                        <li><a href="">
+                                <div class="uk-h6">Discount on Purchase of New Vehicle</div><span> While buying a new
+                                    vehicle, on presenting the Certificate of Deposit, you will get an additional
+                                    discount of 5%.</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------Blogs-------------------------------- -->
+    <div class="section-reviews uk-section-large">
+        <div class="uk-container">
+            <div class="section-container">
+                <div data-uk-slider="autoplay: true">
+                    <div class="uk-position-relative" tabindex="-1">
+                        <ul class="uk-slider-items uk-grid uk-child-width-1-1 uk-child-width-1-1@m">
+                            <li>
+                                <div class="review-item">
+                                    <div class="review-item__box">
+                                        <div class="review-item__body">
+                                            <!-- -----------------------------VVSP Details----------------------------- -->
+                                            <div class="section-title uk-text-center">
+                                                <!-- <span>About Services</span> -->
+                                                <h3 class="uk-h2">VVSP Details</h3>
+                                            </div>
+                                            <div class="section-content">
+                                                <p>In India, the vehicle scrappage policy was officially announced by
+                                                    the government in
+                                                    March 2021. The policy aims to reduce air pollution caused by old
+                                                    and outdated
+                                                    vehicles, boost the auto industry.</p>
+                                                <p>Under the policy, commercial vehicles that are more than 15 years old
+                                                    and personal
+                                                    vehicles that are more than 15-20 years old will be eligible for
+                                                    scrappage. Vehicle
+                                                    owners who choose to scrap their old vehicles and purchase new ones
+                                                    will receive
+                                                    incentives in the form of waivers on registration fees, road tax,
+                                                    and other charges.
+                                                </p>
+                                                <p>The policy is also expected to boost the recycling industry, as old
+                                                    vehicles will be
+                                                    dismantled and recycled in an environmentally friendly manner. The
+                                                    government has
+                                                    proposed setting up authorized vehicle scrapping facilities across
+                                                    the country to
+                                                    ensure that vehicles are dismantled and recycled in a safe and
+                                                    responsible manner.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="review-item">
+                                    <div class="review-item__box">
+                                        <div class="review-item__body">
+                                            <div class="section-title uk-text-center">
+                                                <!-- <span>About Services</span> -->
+                                                <h3 class="uk-h2">Recycling and Mining</h3>
+                                            </div>
+                                            <div class="section-content">
+                                                <p>As of 2021, the estimated cost of producing one tonne of steel
+                                                    through mining in
+                                                    India is around
+                                                    $400 to $500. As of 2021, the estimated cost of producing one tonne
+                                                    of steel through
+                                                    scrap metal
+                                                    in India is around $250 to $350. Cost of producing steel from scrap
+                                                    metal is
+                                                    typically around
+                                                    20-30% lower than the cost of producing steel from iron ore.
+                                                    Production of steel
+                                                    through scrap
+                                                    metals will reduce the cost as compared to producing steel through
+                                                    mining. When the
+                                                    price of
+                                                    steel is reduced the final price of vehicle will also reduce.</p>
+                                                <p>Recycling will also reduce the impact of mining on environment.</p>
+                                                <p>By using recycled steel, manufacturers can reduce the cost of
+                                                    manufacturing steel and
+                                                    contribute
+                                                    to a more sustainable future.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-medium-top"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

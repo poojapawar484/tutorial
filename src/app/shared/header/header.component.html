@@ -1,0 +1,265 @@
+<header class="page-header">
+    <div class="page-header__top">
+        <div class="uk-container uk-container-xlarge">
+            <!-- <div class="page-header__inner">
+                <div class="page-header__top-left">
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i><span>Andheri
+                                West, Mumbai, Maharashtra <b>400058</b></span></li>
+                        <li><i class="far fa-clock"></i><span>Working Hours <b>Mon to Sat 9am - 7pm</b> Sunday
+                                <b>Closed</b></span></li>
+                    </ul>
+                </div>
+                <div class="page-header__top-right">
+                    <ul class="social">
+                        <li class="social-item"><a class="social-item__link" href="https://twitter.com/VehiScrap"><i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li class="social-item"><a class="social-item__link"
+                                href="https://www.facebook.com/profile.php?id=100092583117306"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li class="social-item"><a class="social-item__link"
+                                href="https://instagram.com/vehi.scrap?igshid=MzNlNGNkZWQ4Mg=="><i
+                                    class="fab fa-instagram"></i></a></li>
+
+
+                    </ul>
+                </div>
+            </div> -->
+
+
+            <div class="row py-1">
+                <div class="col-4">
+                    <i class="fas fa-map-marker-alt"></i><span>Andheri
+                        West, Mumbai, Maharashtra <b>400058</b></span>
+                </div>
+                <div class="col-5">
+                    <i class="far fa-clock"></i><span>Working Hours <b>Mon to Sat 9am - 7pm</b> Sunday
+                        <b>Closed</b></span>
+                </div>
+                <div class="col-3">
+                    <ul class="social">
+                        <li class="social-item"><a class="social-item__link" href="https://twitter.com/VehiScrap"><i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li class="social-item"><a class="social-item__link"
+                                href="https://www.facebook.com/profile.php?id=100092583117306"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li class="social-item"><a class="social-item__link"
+                                href="https://instagram.com/vehi.scrap?igshid=MzNlNGNkZWQ4Mg=="><i
+                                    class="fab fa-instagram"></i></a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light" data-uk-sticky
+           >
+            <div class="container-fluid px-3">
+                <div class="logo_width">
+                    <img width="100%" src="../../../assets/img/VehiScrap.png">
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation" (click)="closetabNavResponsive()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div [ngClass]="isCollapsed ? 'collapse navbar-collapse':'navbar-collapse collapse show'"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav  ms-auto">
+                        <li class="nav-item ">
+                            <a [ngClass]="{'active': isActiveRoute('/pages/home')}" [routerLink]="['/pages/home']"
+                                (click)="scrolltop()" class="nav-link active" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a [ngClass]="{'active': isActiveRoute('/pages/about')}" [routerLink]="['/pages/about']"
+                                (click)="scrolltop()" class="nav-link">About us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a [ngClass]="{'active': isActiveRoute('/pages/disclaimer')}"
+                                class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Disclaimer
+                            </a>
+                            <ul class="dropdown-menu s1" aria-labelledby="navbarDropdown">
+                                <li><a [ngClass]="{'active': isActiveRoute('/pages/disclaimer')}"
+                                        [routerLink]="['/pages/privacypolicy']" (click)="scrolltop()"
+                                        class="dropdown-item">Privacy Policy</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a [ngClass]="{'active': isActiveRoute('/pages/contact')}" [routerLink]="['/pages/contact']"
+                                (click)="scrolltop()" class="nav-link">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a [ngClass]="{'active': isActiveRoute('/manage-account/sellvehicle')}" [routerLink]="['/manage-account/sellvehicle']"
+                                (click)="scrolltop()" class="nav-link">Sell Vehicle</a>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a *ngIf="!condition" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Login
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a [routerLink]="['/account/login']" (click)="scrolltop()"
+                                        class="dropdown-item">Seller Login</a></li>
+                                <li><a [routerLink]="['/account-vendor/login-vendor']" (click)="scrolltop()"
+                                        class="dropdown-item">Vendor Login</a></li>
+
+
+
+
+                            </ul>
+
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a *ngIf="isSeller" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                MyAccount
+                            </a>
+                            <ul class="dropdown-menu t1" aria-labelledby="navbarDropdown">
+                                <li><a [routerLink]="['/manage-account/myaccount']" (click)="scrolltop()"><i
+                                            class="icon-user-1"></i>{{username}}</a></li>
+                                <li><i class="icon-logout-1"></i><a href="" (click)="logout()">Logout</a></li>
+
+
+
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a *ngIf="isVendor" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                MyAccount
+                            </a>
+                            <ul class="dropdown-menu t2" aria-labelledby="navbarDropdown">
+                                <li><a [routerLink]="['/manage-account/myaccountvendor']" (click)="scrolltop()"><i
+                                            class="icon-user-1"></i>{{vendor_username}}</a></li>
+                                <li><i class="icon-logout-1"></i><a href="" (click)="logout()">Logout</a></li>
+
+
+
+                            </ul>
+
+                        </li>
+                        <li><a href="https://api.whatsapp.com/send?phone=9145097337" class="whatStyle" target="_blank">
+                                <i class="fab fa-whatsapp bg-success rounded-circle text-light"
+                                    style="height: 40px; width:40px"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+
+<div id="offcanvas" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column uk-flex-between"><button class="uk-offcanvas-close"
+            type="button" data-uk-close=""></button>
+        <div>
+            <div style="background-color: #FFFFFF; padding: 05px;">
+                <div class="logo"><a class="logo__link" href="index.html"><img class="logo__img"
+                            src="../../../assets/img/VehiScrap.png" alt="logo"></a></div>
+            </div>
+            <div class="uk-margin">
+                <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
+                    <li><a routerLink="/pages/home">Home</a></li>
+                    <li><a routerLink="/pages/about">About us</a></li>
+                    <li class="uk-parent"><a routerLink="/pages/disclaimer">Disclaimer</a>
+                        <ul class="uk-nav-sub">
+                            <li><a routerLink="/pages/privacypolicy">Privacy Policy</a></li>
+                            <!-- <li><a routerLink="/pages/termsconditions">Terms & Conditions</a></li> -->
+                        </ul>
+                    </li>
+                    <li><a routerLink="/pages/contact">Contact</a></li>
+                    <li class="uk-parent"><a *ngIf="!condition" routerLink="[/account/login]">Login</a>
+                        <ul class="uk-nav-sub">
+                            <li><a routerLink="/account/login">Seller Login</a></li>
+                            <li><a routerLink="/account-vendor/login-vendor">Vendor Login</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="uk-nav uk-navbar-dropdown-nav" href="#" id="navbarDropdown" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" *ngIf="isSeller">
+                            MyAccount
+                        </a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a [routerLink]="['/manage-account/myaccount']"><i
+                                            class="icon-user-1"></i>{{username}}</a></li>
+                                <li><i class="icon-logout-1"></i><a href="" (click)="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a class="uk-nav uk-navbar-dropdown-nav" href="#" id="navbarDropdown" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" *ngIf="isVendor">
+                            MyAccount
+                        </a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a [routerLink]="['/manage-account/myaccountvendor']"><i
+                                            class="icon-user-1"></i>{{vendor_username}}</a></li>
+                                <li><i class="icon-logout-1"></i><a href="" (click)="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- <li class="uk-parent">
+                        <a *ngIf="!condition" routerLink="/account/login">Login
+                            <span data-uk-icon="chevron-down"></span>
+                        </a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a routerLink="/account/login">Seller Login</a></li>
+                                <li><a routerLink="/account-vendor/login-vendor">Vendor Login</a></li>
+                            </ul>
+                        </div>
+                    </li> -->
+
+
+                    <li><a href="https://api.whatsapp.com/send?phone=9130684839" class="whatStyle">
+                            <i class="fab fa-whatsapp bg-success rounded-circle text-light"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="uk-margin-top">
+            <hr class="uk-margin">
+            <ul class="social">
+                <li class="social-item"><a class="social-item__link" href="https://twitter.com/VehiScrap"><i
+                            class="fab fa-twitter"></i></a></li>
+                <li class="social-item"><a class="social-item__link"
+                        href="https://www.facebook.com/profile.php?id=100092583117306"><i
+                            class="fab fa-facebook-f"></i></a></li>
+                <li class="social-item"><a class="social-item__link"
+                        href="https://instagram.com/vehi.scrap?igshid=MzNlNGNkZWQ4Mg=="><i
+                            class="fab fa-instagram"></i></a></li>
+
+
+            </ul>
+            <hr class="uk-margin">
+            <div class="block-with-icon"><a class="block-with-icon__link" href="tel:8109200664">
+                    <div class="block-with-icon__icon"><img src="assets/img/ico-callback.svg" alt="ico-callback"></div>
+                    <div class="block-with-icon__desc">
+                        <div class="block-with-icon__label">Talk With Our Experts</div>
+                        <div class="block-with-icon__value">+91
+                            9145097337</div>
+                    </div>
+                </a></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+
+
+  <div class="section-why-choose">
+    <div class="section-why-choose__shape">
+      <div class="uk-container">
+        <div class="why-choose uk-grid uk-grid-collapse uk-child-width-1-2@m">
+          <div class="section-first-block">
+            <div class="why-choose__media">
+              <img src="assets/img/img-why-choose.jpg" alt="img-why-choose" />
+              <div class="uk-overlay-primary uk-position-cover"></div>
+              <div class="uk-overlay uk-position-bottom uk-dark">
+                <img src="assets/img/logo-icon-white.svg" alt="" />
+                <div class="uk-h3">
+                  Feeling uneasy about<br />
+                  your vehicle?<br />
+                  Cardan Can Help!
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="why-choose__content">
+              <div class="card-body">
+              
+                <div class="text-center pb-4">
+                  <img src="../../../assets/img/VehiScrap.png" alt="logo icon" width="50%" />
+                </div>
+                <form>
+                  
+               
+                  <div>
+                    <div>
+                        <div class="otp">
+                            <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+                            <button class="btn btn-success mt-4" (click)="handleClick()">Verify OTP</button>
+                          </div>
+                    
+                    </div>
+                  </div>
+                  <br>
+               
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
